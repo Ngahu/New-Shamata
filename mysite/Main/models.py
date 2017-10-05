@@ -4,6 +4,7 @@ from django.conf import settings
 from django.db import models
 from django.utils.text import slugify
 from django.db.models.signals import pre_save
+from phonenumber_field.modelfields import PhoneNumberField
 # Create your models here.
 
 
@@ -68,6 +69,32 @@ class TeamMember(models.Model):
     members_role = models.CharField(max_length=100)
     slug_name = models.SlugField(unique=True)
     members_details = models.TextField()
-    members_phone_number = models.IntegerField(null=True,blank=True)
+    members_phone_number = PhoneNumberField() #models.IntegerField(null=True,blank=True)
     members_email = models.EmailField()
     members_image = models.ImageField(upload_to=upload_location,blank=True, null=True)
+    def __str__(self):
+        return self.members_name
+
+
+    def __unicode__(self):
+        return self.members_name
+
+
+def create_slug_member(instance,member_slug=None):
+    slug_name = slugify(instance.members_name)
+    if member_slug is not None:
+        slug_name = member_slug
+    qs = TeamMember.objects.filter(slug_name=slug_name).order_by("-id")
+    exists = qs.exists()
+    if exists:
+        member_slug = "%s-%s" %(slug, qs.first().id)
+        return create_slug_member(instance,member_slug=member_slug)
+    return slug_name
+
+def pre_save_team_member_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug_name:
+        instance.slug_name = create_slug_member(instance)
+
+
+
+pre_save.connect(pre_save_team_member_receiver,sender=TeamMember)
