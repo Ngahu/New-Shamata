@@ -5,6 +5,7 @@ from django.db import models
 from django.utils.text import slugify
 from django.db.models.signals import pre_save
 from phonenumber_field.modelfields import PhoneNumberField
+from django.core.urlresolvers import reverse
 # Create your models here.
 
 
@@ -34,6 +35,9 @@ class Property(models.Model):
     def __unicode__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse("Main:detail",kwargs={"slug":self.slug})
+        
 
     class Meta:
         ordering = ["-timestamp", "-updated"]
