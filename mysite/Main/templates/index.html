@@ -2,5 +2,17 @@
 
 
 {% block content %}
-  {{title}}
+  {% include "navigation.html" %}
+
+   {% include "body.html" %}
+   
+
+    {% include "properties.html" %}
+
+     {% include "team.html" %}
+
+     {% include "testimony.html" %}
+
+      {% include "footer.html" %}
+
 {% endblock content %}
