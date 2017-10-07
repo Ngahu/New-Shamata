@@ -21,5 +21,5 @@ def home(request):
     context ={
         "title":"this is the home page"
     }
-    template = 'body.html'
+    template = 'team-testimony.html'
     return render(request,template,context)
