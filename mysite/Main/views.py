@@ -23,7 +23,7 @@ def home(request):
         "title": "HOME PAGE HOME",
         
     }
-    return render(request, "index.html",context )
+    return render(request, "base.html",context )
 
 
 def post_create(request):
@@ -142,7 +142,8 @@ def property_listing(request):
         "page_request_var": page_request_var,
         "members_list": queryset_members,
     }
-    return render(request, "property_listing.html", context)
+    template = 'property_listing.html'
+    return render(request,context)
 
 
 #the  gallery view
