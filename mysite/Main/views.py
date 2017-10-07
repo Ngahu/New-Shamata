@@ -21,5 +21,5 @@ def home(request):
     context ={
         "title":"this is the home page"
     }
-    template = 'navigation.html'
+    template = 'body.html'
     return render(request,template,context)
