@@ -6,7 +6,8 @@ from django.conf import settings
 # Create your models here.
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
-
+# phone number
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 #########
@@ -20,7 +21,7 @@ class Team_Meamber(models.Model):
     members_role = models.CharField(max_length=100)
     slug_name = models.SlugField(unique=True)
     members_details = models.TextField()
-    members_phone_number = models.IntegerField(null=True,blank=True)
+    members_phone_number = PhoneNumberField(blank=True, null=True)
     members_email = models.EmailField()
     members_image = models.ImageField(upload_to=upload_location,) #null=False,blank=False
     

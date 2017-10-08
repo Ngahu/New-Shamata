@@ -87,6 +87,7 @@ def post_list(request):
 #List only 8 properties from the database
 def property_listing(request):
     queryset_list = Post.objects.all()
+    queryset_members = Team_Meamber.objects.all()
     paginator = Paginator(queryset_list,8)
     page = request.GET.get('page')
     try:
@@ -98,7 +99,8 @@ def property_listing(request):
     
     context = {
         "object_list":queryset,
-        "title":"List of Properties"
+        "title":"List of Properties",
+        "members_list": queryset_members,
     }
     template = 'index.html'
     return render(request,template,context)

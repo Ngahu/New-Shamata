@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+  {% include "navigation.html" %}
+
+
+
+
+
+
+
+
+
+		
+	<!-- =========================================================================== -->
+			<!-- main-container start -->
+			<!-- ================ -->
+			<section class="main-container">
+
+				<div class="container">
+					<div class="row">
+
+						<!-- main start -->
+						<!-- ================ -->
+						<div class="main col-md-12">
+
+							<!-- page-title start -->
+							<!-- ================ -->
+							<h1 class="page-title">{{ instance_2.members_name }}</h1>
+							<div class="separator-2"></div>
+							<!-- page-title end -->
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="image-box team-member shadow mb-20">
+										<div class="overlay-container overlay-visible">
+										  {% if instance_2.members_image %}	<img src="{{ instance_2.members_image.url }}" alt="">   {% endif %}
+											
+											<div class="overlay-bottom">
+												<div class="text">
+													<h3 class="title margin-clear">{{ instance_2.members_name }}</h3>
+													<p class="margin-clear">{{ instance_2.members_role }}</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-sm-5">
+									<p> {{ instance_2.members_details }}</p>
+									
+									
+									
+									
+								</div>
+								<div class="col-sm-3 col-lg-offset-1">
+									<h3 class="title">Contact Me</h3>
+									<ul class="list-icons">
+										<li><i class="fa fa-phone pr-10 text-default"></i> {{ instance_2.members_phone_number }}</li>
+										<li><i class="fa fa-mobile pr-10 text-default"></i> {{ instance_2.members_phone_number }}</li>
+										<li><a href="mailto:info@janedoe.com"><i class="fa fa-envelope-o pr-10"></i>{{ instance_2.members_email }}</a></li>
+									</ul>
+									<h3>Follow Me</h3>
+									<div class="separator-2"></div>
+									<a target="_blank" href="https://www.linkedin.com/" class="btn btn-animated linkedin btn-sm">Linkedin<i class="pl-10 fa fa-linkedin"></i></a>
+									<a target="_blank" href="https://www.xing.com/" class="btn btn-animated xing btn-sm">Xing<i class="fa fa-xing"></i></a>
+									
+                                </div>
+							</div>
+
+						</div>
+						<!-- main end -->
+
+					</div>
+				</div>
+			</section>
+			<!-- main-container end -->
+<!-- =========================================================================== -->
+
+
+
+    
+
+      {% include "footer.html" %}
+
+{% endblock content %}
