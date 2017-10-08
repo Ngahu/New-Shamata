@@ -17,6 +17,7 @@ class PostForm(forms.ModelForm):
             "image_3",
             "image_4",
             "image_5",
+            "video",
             "location_details",
             "size_of_land",
             "price",

@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+  {% include "navigation.html" %}
+
+				<!-- =============================================================================================== -->
+	
+			<!-- breadcrumb start -->
+			<!-- ================ -->
+			<div class="breadcrumb-container">
+				<div class="container">
+					<ol class="breadcrumb">
+						<li><i class="fa fa-home pr-10"></i><a href="#">Home</a></li>
+						<li class="active">{{instance.title}}</li>
+					</ol>
+				</div>
+			</div>
+			<!-- breadcrumb end -->
+
+			<!-- main-container start -->
+			<!-- ================ -->
+			<section class="main-container padding-bottom-clear">
+
+				<div class="container">
+					<div class="row">
+
+						<div class="col-md-12">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs style-1" role="tablist">
+								<li class="active"><a href="#pill-1" role="tab" data-toggle="tab" title="video"><i class="fa fa-camera pr-5"></i> Image Gallery</a></li>
+								<li><a href="#pill-2" role="tab" data-toggle="tab" title="text"><i class="fa fa-video-camera pr-5"></i> Video</a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content space-bottom">
+								<div class="tab-pane active" id="pill-1">
+									<div class="owl-carousel content-slider-with-controls">
+										<div class="overlay-container overlay-visible">
+											 {% if instance.image %}<img src="{{ instance.image.url }}" alt="">   {% endif %}
+											<div class="overlay-bottom hidden-xs">
+												<div class="text">
+													<h3 class="title">{{ instance.title }}</h3>
+													<p>{{ instance.description }} .</p>
+                                                </div>
+											</div>
+											<a href="{{ instance.image.url }}" class="popup-img overlay-link" title="image title"><i class="icon-plus-1"></i></a>
+										</div>
+										<div class="overlay-container overlay-visible">
+											 {% if instance.image %}<img src="{{ instance.image_2.url }}" alt="">   {% endif %}
+											<div class="overlay-bottom hidden-xs">
+												<div class="text">
+													<h3 class="title">{{ instance.title }}</h3>
+													<p>{{ instance.description }} .</p>
+                                                </div>
+											</div>
+											<a href="{{ instance.image_2.url }}" class="popup-img overlay-link" title="image title"><i class="icon-plus-1"></i></a>
+										</div>
+										<div class="overlay-container overlay-visible">
+											 {% if instance.image %}<img src="{{ instance.image.url }}" alt="">   {% endif %}
+											<div class="overlay-bottom hidden-xs">
+												<div class="text">
+													<h3 class="title">{{ instance.title }}</h3>
+													<p>{{ instance.description }} .</p>
+												</div>
+											</div>
+											<a href="{{ instance.image.url }}" class="popup-img overlay-link" title="image title"><i class="icon-plus-1"></i></a>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane" id="pill-2">
+									<div class="embed-responsive embed-responsive-16by9">
+                                        {% if instance.video %}
+                                           {% else %}
+                                        <h1> no video </h1>
+                                        {% endif %}
+                                       
+                                    </div>
+								</div>
+							</div>
+							<!-- pills end -->
+						</div>
+						<div class="pv-40">
+							<!-- main start -->
+							<!-- ================ -->
+							<div class="main col-md-8">
+								<h1 class="title">{{instance.title}}</h1>
+								<div class="separator-2"></div>
+								<p>{{instance.description}}.</p>
+								<h3 class="title">Features.</h3>
+								<ul class="list-icons">
+									<li><i class="icon-check"></i> {{instance.features}}.</li>
+									<li><i class="icon-check"></i>  {{instance.features}}.</li>
+									<li><i class="icon-check"></i> {{instance.features}}</li>
+									<li><i class="icon-check"></i>  {{instance.features}}.</li>
+								</ul>
+						
+							
+								<hr>
+								
+							</div>
+							<!-- main end -->
+
+							<!-- sidebar start -->
+							<!-- ================ -->
+							<aside class="col-md-4 col-lg-3 col-lg-offset-1">
+								<div class="sidebar">
+									<div class="block clearfix">
+										<h3 class="title">Property Informations</h3>
+										<div class="separator-2"></div>
+										<ul class="list margin-clear">
+											<li><strong>Status: </strong> <span class="text-right">On Sale</span></li>
+											<li><strong>Available <Since></Since>: </strong> <span class="text-right"> {{ instance.timestamp }} </span></li>
+											<li><strong>Location: </strong> <span class="text-right">{{ instance.location_details }}</span></li>
+											<li><strong>Price: </strong> <span class="text-right">{{ instance.price }}  Kshs</span></li>
+											<li><strong>Size: </strong> <span class="text-right"><a href="#">{{ instance.size_of_land }}   Acres</a></span></li>
+										</ul>
+									</div>
+
+
+								</div>
+							</aside>
+							<!-- sidebar end -->
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- main-container end -->
+
+			<!-- section start -->
+			<!-- ================ -->
+			<section class="section light-gray-bg pv-40 clearfix">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="call-to-action text-center">
+								<div class="row">
+									<div class="col-sm-8 col-sm-offset-2">
+										<h2 class="title">More info About This Project</h2>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus error pariatur deserunt laudantium nam, mollitia quas nihil inventore, quibusdam?</p>
+										<div class="separator"></div>
+										<form class="form-inline margin-clear">
+											<div class="form-group has-feedback">
+												<label class="sr-only" for="subscribe3">Email address</label>
+												<input type="email" class="form-control" id="subscribe3" placeholder="Enter email" name="subscribe3" required="">
+												<i class="fa fa-envelope form-control-feedback"></i>
+											</div>
+											<button type="submit" class="btn btn-gray-transparent btn-animated margin-clear">Submit <i class="fa fa-send"></i></button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- section end -->
+
+
+			
+				<!-- =============================================================================================== -->
+					
+
+
+
+      {% include "footer.html" %}
+
+{% endblock content %}

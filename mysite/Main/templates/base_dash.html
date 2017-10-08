@@ -1,0 +1,132 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title> {% block head_title %} Welcome | Home Page {% endblock head_title %}</title>
+    <!--the bootstrap css -->
+    <link rel="stylesheet" type="text/css" href='{% static "css/bootstrap.min.css" %}'>
+     <link rel="stylesheet" type="text/css" href='{% static "css/font-awesome.min.css" %}'>
+   <link rel="stylesheet" type="text/css" href='{% static "css/dashboard/sb-admin.css" %}'>
+       <link rel="stylesheet" type="text/css" href='{% static "css/dashboard/base_dash.css" %}'>
+
+    <!--<link rel="stylesheet" href='{% static "css/styles.css" %}'> -->
+    {%  block extra %}  {% endblock extra %}
+</head>
+<body>
+
+ <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'Main:dashboard' %}">ShamataRealEstate </a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>Welcome {{user.username}} <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                         {% if not request.user.is_authenticated %}
+                        <li>
+                            <a href="{{ login_url }}"><i class="fa fa-fw fa-power-off"></i> Login</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'account_signup' %}"><i class="fa fa-fw fa-power-off"></i> Register</a>
+                        </li>
+                        <li class="divider"></li>
+                        {% else %}
+                        <li>
+                            <a href="{% url 'account_logout' %} "><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+             <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="{% url 'Main:dashboard' %}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'Main:listing' %}"><i class="fa fa-fw fa-table"></i> View Properties</a> 
+                    </li>
+                    <li>
+                        <a href="{% url 'Main:create' %}"><i class="fa fa-fw fa-edit"></i>Create New Post </a>  
+                    </li> 
+                    <li>
+                        <a href="{% url 'Main:add-member' %}"><i class="fa fa-fw fa-edit"></i>Add New  Member </a>  
+                    </li>
+                    <li>
+                        <a href=""><i class=" fa fa-users"></i>View Members </a>  
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-fw fa-desktop"></i> Back to Site</a>
+                    </li>
+                   
+                    <li>
+                        <a href="{% url 'Main:dash_help' %}"><i class="fa fa-fw fa-file"></i> Help</a> 
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            {{ title }}<small>{{ title_small }}</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> ShamataRealEstate Dashboard
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="alert alert-info alert-dismissable">            
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <i class="fa fa-info-circle"></i>  <strong>Signed </strong>in as   <span class="alert-link">{{user.username}} </span> 
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+
+
+
+
+
+
+
+{% block content %}
+
+   
+{% endblock %}
+
+
+  <script src='{% static "js/jquery.2.2.3.min.js" %}'></script>
+<script src='{% static "js/bootstrap.min.js" %}'></script>
+
+    <script src='{% static "js/base.js" %}'></script>
+
+   

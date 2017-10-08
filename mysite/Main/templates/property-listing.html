@@ -19,6 +19,9 @@
 <section>
 <div class="container-fluid">
 <div class="row">
+	  {% if forloop.counter0|divisibleby:3 %}
+        </div><br><div class="row">
+    {% endif %}
 								<div class="col-sm-4">
 									<div class="image-box style-2 mb-20 bordered light-gray-bg">
 										<div class="overlay-container overlay-visible">
@@ -33,6 +36,7 @@
 										</div>
 									</div>
 								</div>
+								<!--
 								<div class="col-sm-4">
 									<div class="image-box style-2 mb-20 bordered light-gray-bg">
 										<div class="overlay-container overlay-visible">
@@ -111,7 +115,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div>   -->
            
 
 

@@ -1,0 +1,63 @@
+{% extends 'base_dash.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+                <div class="page-header">
+                    <h1>{{ title }}</h1>
+                </div>
+                <div class="well">
+                    <p>Welcome To  ShamataRealEstate Admin Help Page.  </p>
+                </div>
+                <div class="container">
+                    <div class="row">
+                         <!-- /.col-sm-4 -->
+                    <div class="col-sm-4">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item active">
+                                <h4 class="list-group-item-heading">Add New Property</h4>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <p class="list-group-item-text" id="help_text">To add new property simply Click on the  Create  New Post icon. Fill Out the form with the required information,and as easy as that Your new property Listing will update to the Main Website. <br>
+                                 To navigate to the Main Website Click on this  <strong> <i class="fa fa-fw fa-desktop"></i> Back to Site icon. </strong> </p>
+                            </a>
+                            
+                        </div>
+                    </div>
+                    <!-- /.col-sm-4 -->
+
+                         <!-- /.col-sm-4 -->
+                    <div class="col-sm-4 col-sm-offset-5">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item active">
+                                <h4 class="list-group-item-heading">Add Company Member</h4>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <p class="list-group-item-text" id="help_text">To add new Company Member simply Click on the Add New Member icon. Fill Out the form with the required information,and as easy as that Your new Member's details will reflect on the Main Website. <br>
+                               To view  The Team's Page  click on this   <strong> <i class=" fa fa-users"></i>View Members  icon. </strong> </p>
+                            </a>
+                            
+                        </div>
+                    </div>
+                    <!-- /.col-sm-4 -->
+                    </div>
+                </div>
+
+                      <footer>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                <p class="footer-info">© 2017 - <strong>ShamataRealEstate</strong> . All Rights Reserved. <span class="pull-right">Designed by <a href="#">Syolo</a></span></p>
+                </div>  <!-- / col-md-12 -->
+                </div>  <!-- / row -->
+            </div><!-- / container -->
+        </footer> 
+
+
+
+
+
+
+{% endblock content %}

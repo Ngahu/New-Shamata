@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
 
 {% block content %}
   
@@ -55,8 +55,8 @@
 						<div class="row">
 							<div class="col-md-8 col-md-offset-2">
 								<div class="testimonial text-center">
-									<div class="testimonial-image">
-										<img src="assets/images/team-member.jpg" alt="Jane Doe" title="Jane Doe" class="img-circle">
+									<div class="testimonial-image">   
+										<img src="{% static "images/team-member.jpg" %}" alt="Jane Doe" title="Jane Doe" class="img-circle">
 									</div>
 									<h3>Just Perfect!</h3>
 									<div class="separator"></div>
@@ -76,7 +76,7 @@
 							<div class="col-md-8 col-md-offset-2">
 								<div class="testimonial text-center">
 									<div class="testimonial-image">
-										<img src="assets/images/team-member.jpg" alt="Jane Doe" title="Jane Doe" class="img-circle">
+										<img src="{% static "images/team-member.jpg" %}" alt="Jane Doe" title="Jane Doe" class="img-circle">
 									</div>
 									<h3>Amazing!</h3>
 									<div class="separator"></div>

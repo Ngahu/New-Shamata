@@ -1,0 +1,30 @@
+{% extends 'base_dash.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <!-- /.row -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            {% if form %}
+                            <form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
+                            {{ form | crispy }}
+                             <input type="submit" value="Create Post" class="btn btn-primary">
+                            {% endif %}
+                    </div>
+                    </div>
+                </div>
+
+                  <footer>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                <p class="footer-info">© 2017 - <strong>ShamataRealEstate</strong> . All Rights Reserved. <span class="pull-right">Designed by <a href="#">Syolo</a></span></p>
+                </div>  <!-- / col-md-12 -->
+                </div>  <!-- / row -->
+            </div><!-- / container -->
+        </footer> 
+
+{% endblock content %}
