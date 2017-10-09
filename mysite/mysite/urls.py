@@ -17,9 +17,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import include,url
 from django.contrib import admin
+from Contacts import views as contact_view
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^contacts/$',contact_view.contact,name='contact'),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^',include('Main.urls', namespace='Main')),
 ]

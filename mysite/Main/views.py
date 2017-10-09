@@ -25,6 +25,13 @@ def home(request):
     return render(request,template,context)
 
 
+def about(request):
+    context = {}
+    template = 'about.html'
+    return render(request,template,context)
+
+
+
 
 def post_create(request):
     if not request.user.is_staff or not request.user.is_superuser:

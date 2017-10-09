@@ -166,7 +166,7 @@
                                                 </li>
 
 												  <li>
-                                                    <a href="#">About Us </a>
+                                                    <a href="{% url   'Main:about' %}">About Us </a>
 
                                                 </li>
 
@@ -186,11 +186,11 @@
                                                 </li>
 												{% if not request.user.is_staff or not request.user.is_superuser%}
 													  <li>
-                                                    <a href="#">Contact Us </a>
+                                                    <a href="{% url 'contact' %}">Contact Us </a>
 
                                                 </li>
 												 {% else %}
-												 	  <li> <a href="#">Contact Us </a> </li>
+												 	  <li> <a href="{% url 'contact' %}">Contact Us </a> </li>
 													   <li><a href="{% url 'Main:dashboard' %}">Dashboard</a></li>
 													    {% endif %}
 

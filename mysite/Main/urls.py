@@ -3,6 +3,7 @@ from  django.conf.urls import url
 
 from .views import (
     post_create,
+    about,
     post_list,
     post_detail,
     dash_board,
@@ -16,6 +17,7 @@ from .views import (
 
 urlpatterns = [
     url(r'^$',property_listing,name='home'),
+    url(r'^about-us/$', about,name='about'),
     url(r'^dashboard/$', dash_board,name='dashboard'),
     url(r'^dashboard-help/$',dash_board_help,name='dash_help'),
     url(r'^add-member/$',add_member,name='add-member'),
