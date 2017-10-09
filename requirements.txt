@@ -1,0 +1,7 @@
+dj-database-url
+Django
+gunicorn
+django-allauth
+django-crispy-forms
+django-phonenumber-field
+Pillow
