@@ -1,5 +1,6 @@
 dj-database-url
 Django
+psycopg2
 gunicorn
 django-allauth
 django-crispy-forms

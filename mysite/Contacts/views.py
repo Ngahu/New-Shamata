@@ -15,7 +15,7 @@ def contact(request):
         print request.POST
         name = form.cleaned_data['name']
         message = form.cleaned_data['message']
-        subject = 'Message from Mysite.com'
+        subject = 'Message from SHAMATAREALESTATE WEBSITE'
         message = '%s %s' %(message,name)
       #  emailFrom = form.cleaned_data['phonenumber']
         emailFrom = form.cleaned_data['email']

@@ -102,3 +102,8 @@ ENV/
 
 /envvv
 .vscode
+
+../venvv/
+venvv/
+
+/mysite/db.sqlite3
