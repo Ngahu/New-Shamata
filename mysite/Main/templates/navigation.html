@@ -71,6 +71,15 @@
 											<button type="button" class="btn btn-default btn-sm"><i class="fa fa-lock pr-10"></i> Logout</button>	</a>
 										</div>
 										  {% endif %}
+
+										  {% if not request.user.is_staff or not request.user.is_superuser%}
+										  {% else %}
+										  <div class="btn-group">
+											<a href="{% url 'Main:dashboard' %} ">
+											<button type="button" class="btn btn-default btn-sm"><i class="fa fa-lock pr-10"></i> Dashboard</button>	</a>
+										</div>
+										{% endif %}
+										  
 										
 										
 										 
