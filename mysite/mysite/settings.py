@@ -33,7 +33,7 @@ SECRET_KEY = 'vjvvec7$b)#95gyt_zciu88lrngz70&a!lw_wnn4oh790ty!-1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True # False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://shamata.herokuapp.com/']
 
 
 # Application definition
