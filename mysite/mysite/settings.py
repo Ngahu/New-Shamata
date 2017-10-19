@@ -31,9 +31,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'vjvvec7$b)#95gyt_zciu88lrngz70&a!lw_wnn4oh790ty!-1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True # False
 
-ALLOWED_HOSTS = ['shamata.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
