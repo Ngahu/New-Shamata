@@ -72,13 +72,7 @@
 										</div>
 										  {% endif %}
 
-										  {% if not request.user.is_staff or not request.user.is_superuser%}
-										  {% else %}
-										  <div class="btn-group">
-											<a href="{% url 'Main:dashboard' %} ">
-											<button type="button" class="btn btn-default btn-sm"><i class="fa fa-lock pr-10"></i> Dashboard</button>	</a>
-										</div>
-										{% endif %}
+										 
 										  
 										
 										
@@ -185,21 +179,22 @@
                                                 </li>
 
 												  <li>
-                                                    <a href="#"> Gallery </a>
+                                                    <a href="{% url   'Main:gallery' %}"> Gallery </a>
 
                                                 </li>
 											
 												  <li>
-                                                      <a href="#">Sell  to us</a>
+                                                      <a href="{% url 'Main:sell_form' %}">Sell  to us</a>
 
-                                                </li>
+												</li>
 												{% if not request.user.is_staff or not request.user.is_superuser%}
 													  <li>
                                                     <a href="{% url 'contact' %}">Contact Us </a>
 
-                                                </li>
-												 {% else %}
-												 	  <li> <a href="{% url 'contact' %}">Contact Us </a> </li>										    {% endif %}
+												</li>
+												{% else %}
+												<li><a href="{% url 'Main:dashboard' %}">Dashboard</a> </li>
+											 {%	endif %}					    
 
 
 												</ul>

@@ -16,6 +16,8 @@ def upload_location(instance,filename):
     return "%s/%s" %(instance.id,filename)
 
 
+
+
 class Team_Meamber(models.Model):
     members_name = models.CharField(max_length=100)
     members_role = models.CharField(max_length=100)
@@ -38,6 +40,29 @@ class Team_Meamber(models.Model):
         return reverse("Main:single_member_detail",kwargs={"id": self.id})
     
 
+
+class Sell_to_us(models.Model):
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
+    owners_phone_number = PhoneNumberField()
+    property_name =  models.CharField(max_length=120)
+    property_image = models.ImageField(upload_to=upload_location)
+    property_image_2 = models.ImageField(upload_to=upload_location)
+    description = models.TextField()
+    size_of_land = models.IntegerField()
+    location_details = models.CharField(max_length=300)
+    price = models.IntegerField()
+    updated = models.DateTimeField(auto_now=True, auto_now_add=False)
+    timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+    featured = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.property_name
+    def __unicode__(self):
+        return self.property_name
+
+    def get_absolute_url_sell(self):
+        return reverse("Main:get_back",kwargs={"id":self.id})
+    
 
 class Post(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)

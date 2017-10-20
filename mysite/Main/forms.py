@@ -1,6 +1,6 @@
 from django import forms
 
-from  .models import Post
+from  .models import Post,Sell_to_us
 
 from .models import Team_Meamber
 
@@ -36,4 +36,21 @@ class TeamForm(forms.ModelForm):
             "members_phone_number",
             "members_email",
             "members_image"
+        ]
+
+
+
+class SellToUs(forms.ModelForm):
+    
+    class Meta:
+        model = Sell_to_us
+        fields = [
+            "property_name",
+            "owners_phone_number",
+            "property_image",
+            "property_image_2",
+            "description",
+            "size_of_land",
+            "location_details",
+            "price",
         ]

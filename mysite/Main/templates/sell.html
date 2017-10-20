@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% include "navigation.html" %}
+
+    <!-- /.row -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <h2>{{title}}</h2>
+                            {% if form %}
+                            <form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
+                            {{ form | crispy }}
+                             <input type="submit" value="Sell To Us" class="btn btn-primary">
+                            {% endif %}
+                    </div>
+                    </div>
+                </div>
+
+          
+
+        {% include "testimony.html" %}
+        
+              {% include "footer.html" %}
+{% endblock content %}
